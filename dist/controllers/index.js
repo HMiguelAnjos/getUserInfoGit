@@ -1,13 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-const route = (0, express_1.Router)();
-route.get('/', (request, response) => {
-    try {
-        const arr = request.body.lista;
-    }
-    catch (err) {
-        console.log(`Erro ${err.message} no get users`);
-    }
-});
+const express_1 = __importDefault(require("express"));
+const router = express_1.default.Router();
+router.use('/users', require('./users.controller'));
+module.exports = router;
 //# sourceMappingURL=index.js.map

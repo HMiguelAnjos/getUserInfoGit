@@ -1,21 +1,17 @@
-import express, { Application } from 'express'
-import cors from 'cors'
+import bodyParser from 'body-parser';
+import express from 'express';
+import dotenv from 'dotenv';
 
-class Server{
-    private server: Application
+dotenv.config();
 
-    constructor(){
-        this.server = express()
-        this.server.use(express.json)
-        this.server.use(express.urlencoded({ extended: false}))
-        this.server.use('./src/controllers')
-        this.server.use(cors)
+const server = express();
 
-        this.server.listen('3002', ()=>{
-            console.log('Server start on port 3300')
-        })
-    }
-    
-}
+server.use(bodyParser.json())
+server.use(bodyParser.urlencoded({ extended: true }))
 
-new Server()
+
+server.use(require('./src/controllers'));
+
+server.listen(3000, () => {
+    console.log({ message: `Api AdviceRisc rodando na porta 3000` });
+});

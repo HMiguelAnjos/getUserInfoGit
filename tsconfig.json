@@ -1,23 +1,26 @@
 {
     "compilerOptions": {
-        "target": "ES2016",
-        "module": "commonjs",
-        "lib": ["ES2020"],
-        "allowJs": true,
-        "sourceMap": true,
-        "outDir": "./dist",
-        "rootDir": "./src",
-        "removeComments": true,
-        "strict": false,
-        "typeRoots": [
-            "./node_modules/@types",
-            "./src/@types"
-        ],
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "forceConsistentCasingInFileNames": true,
+      "target": "ES2016",
+      "module": "CommonJS",
+      "allowJs": true,
+      "sourceMap": true,
+      "outDir": "./dist",
+      "downlevelIteration": true,
+      "strict": false,
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "preserveSymlinks": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
     },
-    "include": ["src/**/*.ts"]
+    "include": [
+      "**/*.ts",
+    ],
+    "exclude": [
+      "node_modules"
+    ]
 }
